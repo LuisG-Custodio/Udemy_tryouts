@@ -1,0 +1,59 @@
+@extends('dashboard.post_layout')
+@section('titulo', 'Ver Post')
+
+@section('contenido')
+
+    <h1>{{$post->title}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Título
+                </th>
+                <th>
+                    Slug
+                </th>
+                <th>
+                    Categoría
+                </th>
+                <th>
+                    Posteado
+                </th>
+                <th>
+                    Contenido
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Imagen
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{$post->title}}
+                </td>
+                <td>
+                    {{$post->slug}}
+                </td>
+                <td>
+                    {{$post->category->title}}
+                </td>
+                <td>
+                    {{$post->posted}}
+                </td>
+                <td>
+                    {{$post->content}}
+                </td>
+                <td>
+                    {{$post->description}}
+                </td>
+                <td>
+                    <img src="{{ asset('image/' . $post->image) }}" alt="No hay imagen {{$post->image}}" style="max-width: 200px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+@endsection
